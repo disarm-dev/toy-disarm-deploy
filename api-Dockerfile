@@ -1,5 +1,8 @@
 FROM node-alpine
 
 COPY api.js .
+COPY package.json .
+
+RUN "npm install"
 
 CMD ["node", "api.js"]
