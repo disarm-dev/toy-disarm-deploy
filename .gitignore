@@ -2,3 +2,4 @@ node_modules
 Caddyfile
 caddy
 run.pid
+*.log
