@@ -1,0 +1,65 @@
+version: '3'
+services:
+  # mongo:
+  #   image: mongo
+  #   container_name: mongo
+  #   ports:
+  #     - "27017:27017"
+  # proxy:
+  #   image: jwilder/nginx-proxy
+  #   volumes:
+  #     - /var/run/docker.sock:/tmp/docker.sock:ro
+  #     - certs:/etc/nginx/certs:ro
+  #     - hosts:/etc/nginx/vhost.d
+  #     - html:/usr/share/nginx/html
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   labels:
+  #     - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
+  # ssl:
+  #   image: jrcs/letsencrypt-nginx-proxy-companion
+  #   volumes:
+  #     - certs:/etc/nginx/certs:rw
+  #     - hosts:/etc/nginx/vhost.d
+  #     - html:/usr/share/nginx/html
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  app:
+    image: app
+    # environment:
+    #   - VIRTUAL_HOST=${APP_URL}
+    #   - LETSENCRYPT_HOST=${APP_URL}
+    #   - LETSENCRYPT_EMAIL=${SSL_EMAIL}
+    # image: disarm/disarm-app
+    # expose:
+    #   - "80"
+  api:
+    image: api
+    ports:
+      - "5000:5000"
+    # depends_on: 
+    #   - mongo
+    # environment:
+    #   - LETSENCRYPT_HOST=${APP_URL}:3000
+    #   - LETSENCRYPT_EMAIL=${SSL_EMAIL}
+    #   - VIRTUAL_HOST=${APP_URL}:3000
+    #   - MONGODB_URI
+    #   - SHEETS_URL
+    #   - PORT=3000
+    #   - SECRET=very_secret
+    # image: disarm/disarm-server:feature_config-server-into-disarm-server
+    # command: npm run start
+    # expose:
+    #   - "3000"
+    # links:
+    #   - mongo
+  editor:
+    image: editor
+    # depends_on: 
+    #   - mongo
+    # environment: 
+
+# volumes:
+#   certs:
+#   hosts:
+#   html:
