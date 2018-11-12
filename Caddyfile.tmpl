@@ -1,0 +1,15 @@
+app.$DOMAIN {
+  rewrite / {
+    to /app.html
+  }
+}
+
+editor.$DOMAIN {
+  rewrite / {
+    to /editor.html
+  }
+}
+
+api.$DOMAIN {
+  proxy / :3000
+}
