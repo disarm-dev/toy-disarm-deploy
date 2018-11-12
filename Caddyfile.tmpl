@@ -1,15 +1,20 @@
 app.$DOMAIN {
+  log app.log
   rewrite / {
     to /app.html
   }
 }
 
 editor.$DOMAIN {
+  log editor.log
   rewrite / {
     to /editor.html
   }
 }
 
 api.$DOMAIN {
+  log api.log
   proxy / :3000
+  on startup "nohup node api.js > /dev/null 2>&1 & echo $! > run.pid"
+  on shutdown "kill $(cat run.pid)"
 }
