@@ -3,7 +3,7 @@ var app = express();
 
 /* serves main page */
 app.get("/", function (req, res) {
-  res.send(200, 'api served')
+  res.status(200).send('api served')
 });
 
 var port = process.env.PORT || 3000;
