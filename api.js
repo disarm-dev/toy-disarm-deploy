@@ -6,7 +6,7 @@ app.get("/", function (req, res) {
   res.send(200)
 });
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("API listening on " + port);
 });
