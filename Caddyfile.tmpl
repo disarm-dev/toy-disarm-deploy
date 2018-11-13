@@ -1,7 +1,8 @@
 app.$DOMAIN {
   log app.log
+  root disarm-app
   rewrite / {
-    to /app.html
+    to {path} /index.html
   }
 }
 
