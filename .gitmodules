@@ -1,9 +1,9 @@
 [submodule "disarm-app"]
 	path = disarm-app
-	url = git@github.com:disarm-platform/disarm-app
+	url = https://github.com/disarm-platform/disarm-app
 [submodule "config-editor"]
 	path = config-editor
-	url = git@github.com:disarm-platform/config-editor
+	url = https://github.com/disarm-platform/config-editor
 [submodule "disarm-server"]
 	path = disarm-server
-	url = git@github.com:disarm-platform/disarm-server
+	url = https://github.com/disarm-platform/disarm-server
