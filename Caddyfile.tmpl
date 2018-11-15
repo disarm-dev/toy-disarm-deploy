@@ -8,8 +8,9 @@ app.$DOMAIN {
 
 editor.$DOMAIN {
   log editor.log
+  root config-editor/dist
   rewrite / {
-    to /editor.html
+    to {path} /index.html
   }
 }
 
